@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Purple Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6b21a8',
+                        secondary: '#a855f7'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #a855f7;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #a855f7;
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-primary-900 to-primary-700 text-white min-h-screen">
+    <div id="particles-js"></div>
+    
+    <!-- Navigation -->
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold text-white flex items-center">
+                <i data-feather="code" class="mr-2 text-secondary-400"></i> PortfolioPro
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-white hover:text-secondary-300">Home</a>
+                <a href="projects.html" class="nav-link text-white hover:text-secondary-300">Projects</a>
+                <a href="about.html" class="nav-link text-white hover:text-secondary-300 font-medium">About</a>
+                <a href="contact.html" class="nav-link text-white hover:text-secondary-300">Contact</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <i data-feather="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden mt-4" id="mobile-menu">
+            <a href="index.html" class="block py-2 text-white hover:text-secondary-300">Home</a>
+            <a href="projects.html" class="block py-2 text-white hover:text-secondary-300">Projects</a>
+            <a href="about.html" class="block py-2 text-white hover:text-secondary-300 font-medium">About</a>
+            <a href="contact.html" class="block py-2 text-white hover:text-secondary-300">Contact</a>
+        </div>
+    </nav>
+
+    <!-- About Header -->
+    <section class="container mx-auto px-6 py-16 md:py-24 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">About <span class="text-secondary-300">Me</span></h1>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+            Get to know the person behind the code. My journey, skills, and what drives me to create.
+        </p>
+    </section>
+
+    <!-- About Content -->
+    <section class="container mx-auto px-6 pb-16">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-1/3 flex justify-center">
+                <div class="relative">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-secondary-500 to-primary-600 flex items-center justify-center shadow-2xl overflow-hidden">
+                        <img src="http://static.photos/people/640x360/1" alt="Profile" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 bg-primary-800 rounded-lg px-4 py-2 shadow-lg">
+                        <p class="text-sm">Based in</p>
+                        <p class="font-medium text-secondary-300">San Francisco, CA</p>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-2/3">
+                <h2 class="text-3xl font-bold mb-6">Who I Am</h2>
+                <div class="space-y-4 text-gray-300">
+                    <p>
+                        I'm a passionate full-stack developer with 5+ years of experience creating digital solutions that solve real-world problems. My journey in tech began when I built my first website at 15, and I've been hooked ever since.
+                    </p>
+                    <p>
+                        What sets me apart is my ability to bridge the gap between design and development. I don't just write code—I create experiences that users love. My approach combines technical expertise with creative problem-solving.
+                    </p>
+                    <p>
+                        When I'm not coding, you can find me hiking, reading sci-fi novels, or experimenting with new cooking recipes. I believe in continuous learning and pushing the boundaries of what's possible with technology.
+                    </p>
+                </div>
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <div class="flex items-center">
+                        <i data-feather="mail" class="mr-2 text-secondary-400"></i>
+                        <span>alex@portfoliopro.com</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-feather="phone" class="mr-2 text-secondary-400"></i>
+                        <span>(123) 456-7890</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-feather="map-pin" class="mr-2 text-secondary-400"></i>
+                        <span>San Francisco, CA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="bg-primary-800 py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">My <span class="text-secondary-300">Journey</span></h2>
+            
+            <div class="relative max-w-2xl mx-auto">
+                <div class="absolute left-1/2 w-1 h-full bg-gradient-to-b from-secondary-500 to-primary-600 transform -translate-x-1/2"></div>
+                
+                <!-- Timeline Item 1 -->
+                <div class="relative mb-12 pl-12 timeline-item">
+                    <div class="bg-primary-700 rounded-lg p-6 shadow-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Senior Developer</h3>
+                            <span class="px-3 py-1 bg-secondary-600 rounded-full text-sm">2021 - Present</span>
+                        </div>
+                        <h4 class="text-secondary-300 mb-3">TechSolutions Inc.</h4>
+                        <p class="text-gray-300">
+                            Lead a team of developers building enterprise SaaS solutions. Implemented CI/CD pipelines that reduced deployment times by 70%.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="relative mb-12 pl-12 timeline-item">
+                    <div class="bg-primary-700 rounded-lg p-6 shadow-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Frontend Developer</h3>
+                            <span class="px-3 py-1 bg-secondary-600 rounded-full text-sm">2018 - 2021</span>
+                        </div>
+                        <h4 class="text-secondary-300 mb-3">DigitalAgency</h4>
+                        <p class="text-gray-300">
+                            Developed responsive websites and web applications for clients across various industries. Won "Developer of the Year" award in 2020.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="relative mb-12 pl-12 timeline-item">
+                    <div class="bg-primary-700 rounded-lg p-6 shadow-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">UI/UX Designer</h3>
+                            <span class="px-3 py-1 bg-secondary-600 rounded-full text-sm">2016 - 2018</span>
+                        </div>
+                        <h4 class="text-secondary-300 mb-3">CreativeStudio</h4>
+                        <p class="text-gray-300">
+                            Designed user interfaces and experiences for mobile and web applications. My designs helped increase user engagement by 45%.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 4 -->
+                <div class="relative pl-12 timeline-item">
+                    <div class="bg-primary-700 rounded-lg p-6 shadow-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-semibold">Computer Science Degree</h3>
+                            <span class="px-3 py-1 bg-secondary-600 rounded-full text-sm">2012 - 2016</span>
+                        </div>
+                        <h4 class="text-secondary-300 mb-3">Stanford University</h4>
+                        <p class="text-gray-300">
+                            Graduated with honors. Served as president of the Web Development Club and built several apps for campus organizations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Technical <span class="text-secondary-300">Skills</span></h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <!-- Programming Languages -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <i data-feather="code" class="mr-3 text-secondary-400"></i> Programming
+                    </h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">JavaScript/TypeScript</span>
+                                <span class="text-secondary-300">95%</span>
+                            </div>
+                            <div class="w-full bg-primary-700 rounded-full h-2">
+                                <div class="bg-secondary-500 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Python</span>
+                                <span class="text-secondary-300">85%</span>
+                            </div>
+                            <div class="w-full bg-primary-700 rounded-full h-2">
+                                <div class="bg-secondary-500 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Java</span>
+                                <span class="text-secondary-300">75%</span>
+                            </div>
+                            <div class="w-full bg-primary-700 rounded-full h-2">
+                                <div class="bg-secondary-500 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Dart</span>
+                                <span class="text-secondary-300">80%</span>
+                            </div>
+                            <div class="w-full bg-primary-700 rounded-full h-2">
+                                <div class="bg-secondary-500 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Frameworks & Tools -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <i data-feather="tool" class="mr-3 text-secondary-400"></i> Frameworks & Tools
+                    </h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">React/React Native</span>
+                                <span class="text-secondary-300">90%</span>
+                            </div>
+                            <div class="w-full bg-primary-700 rounded-full h-2">
+                                <div class="bg-secondary-500 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Node.js</span>
+                                <span class="text-secondary-300">88%</span>
+                            </div>
+                            <div class="w-full bg-primary-700 rounded-full h-2">
+                                <div class="bg-secondary-500 h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Flutter</span>
+                                <span class="text-secondary-300">82%</span>
+                            </div>
+                            <div class="w-full bg-primary-700 rounded-full h-2">
+                                <div class="bg-secondary-500 h-2 rounded-full" style="width: 82%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Figma/Adobe XD</span>
+                                <span class="text-secondary-300">92%</span>
+                            </div>
+                            <div class="w-full bg-primary-700 rounded-full h-2">
+                                <div class="bg-secondary-500 h-2 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts -->
+    <section class="bg-primary-800 py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Fun <span class="text-secondary-300">Facts</span></h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-primary-700 rounded-lg p-6 text-center hover:bg-primary-600 transition duration-300">
+                    <i data-feather="coffee" class="w-12 h-12 mx-auto text-secondary-400 mb-4"></i>
+                    <h3 class="text-4xl font-bold mb-2">5000+</h3>
+                    <p class="text-gray-300">Cups of coffee consumed</p>
+                </div>
+                <div class="bg-primary-700 rounded-lg p-6 text-center hover:bg-primary-600 transition duration-300">
+                    <i data-feather="book" class="w-12 h-12 mx-auto text-secondary-400 mb-4"></i>
+                    <h3 class="text-4xl font-bold mb-2">12</h3>
+                    <p class="text-gray-300">Tech books read annually</p>
+                </div>
+                <div class="bg-primary-700 rounded-lg p-6 text-center hover:bg-primary-600 transition duration-300">
+                    <i data-feather="map" class="w-12 h-12 mx-auto text-secondary-400 mb-4"></i>
+                    <h3 class="text-4xl font-bold mb-2">15</h3>
+                    <p class="text-gray-300">Countries visited</p>
+                </div>
+                <div class="bg-primary-700 rounded-lg p-6 text-center hover:bg-primary-600 transition duration-300">
+                    <i data-feather="heart" class="w-12 h-12 mx-auto text-secondary-400 mb-4"></i>
+                    <h3 class="text-4xl font-bold mb-2">100%</h3>
+                    <p class="text-gray-300">Passion for coding</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-900 py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-white flex items-center">
+                        <i data-feather="code" class="mr-2 text-secondary-400"></i> PortfolioPro
+                    </a>
+                    <p class="text-gray-400 mt-2">Crafting digital experiences with passion</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-secondary-300 transition duration-300">
+                        <i data-feather="github"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-secondary-300 transition duration-300">
+                        <i data-feather="twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-secondary-300 transition duration-300">
+                        <i data-feather="linkedin"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-secondary-300 transition duration-300">
+                        <i data-feather="instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-primary-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">&copy; 2023 PortfolioPro. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-gray-300 text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-300 text-sm">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#a855f7" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: "#a855f7", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "grab" },
+                    onclick: { enable: true, mode: "push" }
+                }
+            }
+        });
+
+        // Initialize feather icons
+        feather.replace();
+    </script>
+</body>
+</html>
