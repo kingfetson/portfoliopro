@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purple Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6b21a8',
+                        secondary: '#a855f7'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #a855f7;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-primary-900 to-primary-700 text-white min-h-screen">
+    <div id="particles-js"></div>
+    
+    <!-- Navigation -->
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold text-white flex items-center">
+                <i data-feather="code" class="mr-2 text-secondary-400"></i> PortfolioPro
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-white hover:text-secondary-300">Home</a>
+                <a href="projects.html" class="nav-link text-white hover:text-secondary-300">Projects</a>
+                <a href="about.html" class="nav-link text-white hover:text-secondary-300">About</a>
+                <a href="contact.html" class="nav-link text-white hover:text-secondary-300">Contact</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <i data-feather="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden mt-4" id="mobile-menu">
+            <a href="index.html" class="block py-2 text-white hover:text-secondary-300">Home</a>
+            <a href="projects.html" class="block py-2 text-white hover:text-secondary-300">Projects</a>
+            <a href="about.html" class="block py-2 text-white hover:text-secondary-300">About</a>
+            <a href="contact.html" class="block py-2 text-white hover:text-secondary-300">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-6 py-16 md:py-24">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Hi, I'm <span class="text-secondary-300">Alex</span></h1>
+                <h2 class="text-xl md:text-2xl mb-8 text-secondary-200">Creative Web Developer & UI Designer</h2>
+                <p class="text-lg mb-8 text-gray-300 leading-relaxed">
+                    I craft beautiful digital experiences with clean code and pixel-perfect designs. Let's build something amazing together!
+                </p>
+                <div class="flex space-x-4">
+                    <a href="projects.html" class="px-6 py-3 bg-secondary-500 hover:bg-secondary-600 rounded-full font-medium transition duration-300 shadow-lg hover:shadow-secondary-500/30">
+                        View My Work
+                    </a>
+                    <a href="contact.html" class="px-6 py-3 border-2 border-secondary-400 text-secondary-300 hover:bg-secondary-900/30 rounded-full font-medium transition duration-300">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-secondary-500 to-primary-600 flex items-center justify-center shadow-2xl">
+                        <img src="http://static.photos/technology/640x360/42" alt="Profile" class="w-60 h-60 md:w-72 md:h-72 rounded-full object-cover border-4 border-white">
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 bg-primary-800 rounded-lg px-4 py-2 shadow-lg">
+                        <p class="text-sm">Currently working on</p>
+                        <p class="font-medium text-secondary-300">Next.js Project</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="bg-primary-800 py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">My <span class="text-secondary-300">Skills</span></h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-primary-700 rounded-lg p-6 text-center hover:bg-primary-600 transition duration-300">
+                    <i data-feather="code" class="w-12 h-12 mx-auto text-secondary-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Frontend</h3>
+                    <p class="text-gray-300">React, Vue, HTML5, CSS3, JavaScript</p>
+                </div>
+                <div class="bg-primary-700 rounded-lg p-6 text-center hover:bg-primary-600 transition duration-300">
+                    <i data-feather="server" class="w-12 h-12 mx-auto text-secondary-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Backend</h3>
+                    <p class="text-gray-300">Node.js, Express, MongoDB, Firebase</p>
+                </div>
+                <div class="bg-primary-700 rounded-lg p-6 text-center hover:bg-primary-600 transition duration-300">
+                    <i data-feather="smartphone" class="w-12 h-12 mx-auto text-secondary-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Mobile</h3>
+                    <p class="text-gray-300">React Native, Flutter, Swift</p>
+                </div>
+                <div class="bg-primary-700 rounded-lg p-6 text-center hover:bg-primary-600 transition duration-300">
+                    <i data-feather="pen-tool" class="w-12 h-12 mx-auto text-secondary-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Design</h3>
+                    <p class="text-gray-300">Figma, Adobe XD, UI/UX, Prototyping</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4">Featured <span class="text-secondary-300">Projects</span></h2>
+            <p class="text-center text-gray-300 mb-12 max-w-2xl mx-auto">
+                Here are some of my recent projects. Each one was an opportunity to learn and grow as a developer.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="project-card bg-primary-800 rounded-xl overflow-hidden transition duration-300">
+                    <img src="http://static.photos/technology/640x360/1" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">E-commerce Platform</h3>
+                        <p class="text-gray-300 mb-4">A full-stack e-commerce solution with payment integration.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary-700 rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-primary-700 rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-primary-700 rounded-full text-sm">MongoDB</span>
+                        </div>
+                        <a href="#" class="text-secondary-400 hover:text-secondary-300 font-medium inline-flex items-center">
+                            View Project <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card bg-primary-800 rounded-xl overflow-hidden transition duration-300">
+                    <img src="http://static.photos/technology/640x360/2" alt="Project 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Task Management App</h3>
+                        <p class="text-gray-300 mb-4">A productivity app with real-time collaboration features.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary-700 rounded-full text-sm">Vue.js</span>
+                            <span class="px-3 py-1 bg-primary-700 rounded-full text-sm">Firebase</span>
+                            <span class="px-3 py-1 bg-primary-700 rounded-full text-sm">Tailwind</span>
+                        </div>
+                        <a href="#" class="text-secondary-400 hover:text-secondary-300 font-medium inline-flex items-center">
+                            View Project <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card bg-primary-800 rounded-xl overflow-hidden transition duration-300">
+                    <img src="http://static.photos/technology/640x360/3" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Weather Dashboard</h3>
+                        <p class="text-gray-300 mb-4">Real-time weather forecasting with interactive maps.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary-700 rounded-full text-sm">JavaScript</span>
+                            <span class="px-3 py-1 bg-primary-700 rounded-full text-sm">API</span>
+                            <span class="px-3 py-1 bg-primary-700 rounded-full text-sm">Chart.js</span>
+                        </div>
+                        <a href="#" class="text-secondary-400 hover:text-secondary-300 font-medium inline-flex items-center">
+                            View Project <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="projects.html" class="inline-flex items-center px-6 py-3 bg-secondary-500 hover:bg-secondary-600 rounded-full font-medium transition duration-300 shadow-lg hover:shadow-secondary-500/30">
+                    View All Projects <i data-feather="arrow-right" class="ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="bg-primary-800 py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Client <span class="text-secondary-300">Testimonials</span></h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-primary-700 rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/200x200/1" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Sarah Johnson</h4>
+                            <p class="text-secondary-300 text-sm">CEO, TechSolutions</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">
+                        "Alex delivered beyond our expectations. The project was completed ahead of schedule with excellent attention to detail. Highly recommend!"
+                    </p>
+                    <div class="flex mt-4">
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                    </div>
+                </div>
+                <div class="bg-primary-700 rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <img src="http://static.photos/people/200x200/2" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Michael Chen</h4>
+                            <p class="text-secondary-300 text-sm">Founder, StartupX</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">
+                        "Working with Alex was a game-changer for our business. The website they built has significantly increased our online conversions."
+                    </p>
+                    <div class="flex mt-4">
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>
+                        <i data-feather="star" class="w-4 h-4 text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to start your project?</h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                I'm currently available for freelance work. Let's discuss how I can help bring your ideas to life.
+            </p>
+            <a href="contact.html" class="inline-flex items-center px-8 py-4 bg-secondary-500 hover:bg-secondary-600 rounded-full font-medium text-lg transition duration-300 shadow-lg hover:shadow-secondary-500/30">
+                Get In Touch <i data-feather="mail" class="ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-900 py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-white flex items-center">
+                        <i data-feather="code" class="mr-2 text-secondary-400"></i> PortfolioPro
+                    </a>
+                    <p class="text-gray-400 mt-2">Crafting digital experiences with passion</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-secondary-300 transition duration-300">
+                        <i data-feather="github"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-secondary-300 transition duration-300">
+                        <i data-feather="twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-secondary-300 transition duration-300">
+                        <i data-feather="linkedin"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-secondary-300 transition duration-300">
+                        <i data-feather="instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-primary-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">&copy; 2023 PortfolioPro. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-gray-300 text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-300 text-sm">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#a855f7" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: "#a855f7", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "grab" },
+                    onclick: { enable: true, mode: "push" }
+                }
+            }
+        });
+
+        // Initialize feather icons
+        feather.replace();
+    </script>
+</body>
+</html>
